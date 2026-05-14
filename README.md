@@ -48,27 +48,26 @@ X_train, y_train, *_ = simulate_3d_curve_dataset(K=3, n_train=200)
 enc = IsingEncoder(n_components=32, n_spins=512, random_state=0)
 S = enc.fit_transform(X_train)
 
-# Extract and sharpen archetypes
+# Extract archetypes
 groups = np.stack([S[y_train == k] for k in range(3)])
 xi = compute_empirical_archetypes(groups)
-xi_sharp = apply_spectral_sharpening(xi, gamma_reg=1e-3)
 
 # Build TAM patterns (all layers identical for this demo)
 patterns = TAMPatterns(
     XI=xi, ETA=xi, CHI=xi,
-    XI_mean=xi_sharp, ETA_mean=xi_sharp, CHI_mean=xi_sharp,
+    XI_mean=xi, ETA_mean=xi, CHI_mean=xi,
 )
 
 # Run retrieval
-rhos = Rhos(rho_sigma=0.0, rho_tau=0.0, rho_phi=0.0)
-couplings = Couplings(a=1.0, b=1.0, c=1.0)
+rhos = Rhos(sigma=0.0, tau=0.0, phi=0.0)
+couplings = Couplings(sigma_tau=1.0, sigma_phi=1.0, tau_phi=1.0)
 gi = compute_gram_inverses(xi, xi, xi)
 state0 = build_cued_state(patterns, mu_cue=0, cued_layer="sigma")
-result = run_mc_trajectory(
-    patterns, rhos, couplings, beta=2.0, steps=50,
+result = run_trajectory(
+    patterns, rhos, couplings, beta=3.0, steps=50,
     init_state=state0, gram_inverses=gi,
 )
-print("Final σ-magnetisations:", result["sigma"][-1])
+print("Final sigma-magnetisations:", result["sigma"][-1])
 ```
 
 ## Running tests

@@ -8,6 +8,9 @@ version = "0.1.0"
 description = "Multilayer hetero-associative memory with pseudo-inverse couplings"
 readme = "README.md"
 license = {text = "MIT"}
+authors = [
+    {name = "Andrea Ladiana"}
+]
 requires-python = ">=3.10"
 dependencies = [
     "numpy>=1.24",

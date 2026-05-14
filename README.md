@@ -104,9 +104,9 @@ multilayer-hopfield/
 If you use this code, please cite:
 
 ```bibtex
-@article{xxx2026multilayer,
+@article{ladiana2026multilayer,
   title   = {Multilayer hetero-associative memory for multivariate sequence analysis},
-  author  = {XXX},
+  author  = {Andrea Ladiana},
   journal = {Physical Review E},
   year    = {2026}
 }

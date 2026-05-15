@@ -111,6 +111,19 @@ If you use this code, please cite:
 }
 ```
 
+Additional preprint (arXiv):
+
+```bibtex
+@misc{ladiana2026finite,
+    title = {Finite-size scaling of hetero-associative retrieval in continuous-signal-driven Ising spin systems},
+    author = {Andrea Ladiana},
+    howpublished = {arXiv:2605.14059},
+    year = {2026},
+    url = {https://arxiv.org/abs/2605.14059},
+    doi = {10.48550/arXiv.2605.14059}
+}
+```
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

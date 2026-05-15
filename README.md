@@ -101,9 +101,6 @@ multilayer-hopfield/
 ## Citation
 
 If you use this code, please cite:
-
-Additional preprint (arXiv):
-
 ```bibtex
 @misc{ladiana2026finite,
     title = {Finite-size scaling of hetero-associative retrieval in continuous-signal-driven Ising spin systems},
